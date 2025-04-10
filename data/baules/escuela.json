@@ -1,0 +1,11 @@
+[
+    {
+        "id": "6b50d371-7990-4ae0-8267-a7028a81fba1",
+        "titulo": "Pendientes",
+        "descripcion": "estudiar",
+        "fecha_limite": "2000-10-11",
+        "grupo": "asignado",
+        "estado": "en proceso",
+        "medio": ""
+    }
+]
