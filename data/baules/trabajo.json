@@ -1,11 +1,20 @@
 [
     {
         "id": "5f8873a9-f911-420f-ad32-6e9aaf270944",
-        "titulo": "pureba trabajo",
-        "descripcion": "crear app",
-        "fecha_limite": "2000-10-11",
-        "grupo": "ceo",
-        "estado": "asignada",
-        "medio": ""
+        "titulo": null,
+        "descripcion": null,
+        "fecha_limite": null,
+        "grupo": null,
+        "estado": "en proceso",
+        "medio": null
+    },
+    {
+        "id": "18639dfb-1907-44b4-9a65-0ff671228b74",
+        "titulo": "Implementar login",
+        "descripcion": "Crear la funcionalidad de inicio de sesión de usuarios.",
+        "fecha_limite": "2025-04-25",
+        "grupo": "desarrollo",
+        "estado": "pendiente",
+        "medio": null
     }
 ]

@@ -99,7 +99,6 @@ def eliminar_tarea(gestor):
     else:
         print("Tarea no encontrada en este baúl.")
 
-# Función principal del programa
 def main():
     nombre_baul = input("Ingrese el nombre del baúl de tareas (dejar en blanco para 'tareas.json'): ")
     if not nombre_baul:
@@ -107,7 +106,7 @@ def main():
     gestor = GestionTareas(nombre_baul)
 
     while True:
-        mostrar_menu(gestor.archivo)  # Mostrar el nombre del archivo actual
+        mostrar_menu(os.path.basename(gestor.archivo))  # Mostrar solo el nombre del archivo
         opcion = input("Selecciona una opción: ")
 
         if opcion == "1":
@@ -132,6 +131,7 @@ def main():
         elif opcion == "9":
             print("Saliendo...")
             break
+        # Aquí podrías añadir la opción 10 si decides integrarla con la API
         else:
             print("Opción no válida.")
 
