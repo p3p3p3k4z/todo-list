@@ -1,0 +1,92 @@
+[
+    {
+        "id": "a1b2c3d4-e5f6-7890-1234-567890abcdef",
+        "titulo": "Nueva tarea con estado asignada",
+        "descripcion": "Esta es una tarea recién creada y ya está asignada a alguien.",
+        "fecha_limite": "2025-04-18",
+        "grupo": "proyecto-x",
+        "estado": "asignada",
+        "medio": null
+    },
+    {
+        "id": "f9e8d7c6-b5a4-3210-fedc-ba9876543210",
+        "titulo": "Tarea en pleno desarrollo",
+        "descripcion": "Los desarrolladores están trabajando activamente en esta funcionalidad.",
+        "fecha_limite": "2025-04-22",
+        "grupo": "desarrollo",
+        "estado": "en proceso",
+        "medio": null
+    },
+    {
+        "id": "01234567-89ab-cdef-0123-456789abcdef",
+        "titulo": "Tarea completada exitosamente",
+        "descripcion": "Esta tarea ha sido finalizada y verificada.",
+        "fecha_limite": "2025-04-15",
+        "grupo": "testing",
+        "estado": "completada",
+        "medio": "/static/uploads/jLXKclH-domo-kun-wallpaper.jpg"
+    },
+    {
+        "id": "bcdefa01-2345-6789-abcd-ef0123456789",
+        "titulo": "Tarea que ha sido cancelada",
+        "descripcion": "Debido a cambios en los requerimientos, esta tarea ya no es necesaria.",
+        "fecha_limite": "2025-04-20",
+        "grupo": "general",
+        "estado": "cancelada",
+        "medio": null
+    },
+    {
+        "id": "98765432-10fe-dcba-9876-543210fedcba",
+        "titulo": "Otra tarea pendiente por iniciar",
+        "descripcion": "Esta tarea está lista para ser trabajada.",
+        "fecha_limite": "2025-04-25",
+        "grupo": "diseño",
+        "estado": "pendiente",
+        "medio": "/static/uploads/design_mockup.png"
+    },
+    {
+        "id": "defabc98-7654-3210-fedc-ba0123456789",
+        "titulo": "Tarea asignada a un nuevo miembro",
+        "descripcion": "Un nuevo miembro del equipo se encargará de esta tarea.",
+        "fecha_limite": "2025-04-28",
+        "grupo": "incorporación",
+        "estado": "asignada",
+        "medio": "/static/uploads/animal-7017941_1920.jpg"
+    },
+    {
+        "id": "23456789-abcd-ef01-2345-6789abcdef01",
+        "titulo": "Tarea en proceso de revisión",
+        "descripcion": "El código de esta tarea está siendo revisado por el equipo.",
+        "fecha_limite": "2025-05-01",
+        "grupo": "code-review",
+        "estado": "en proceso",
+        "medio": null
+    },
+    {
+        "id": "ef012345-6789-abcd-ef01-23456789abcd",
+        "titulo": "Tarea completada con algunos problemas",
+        "descripcion": "La tarea se completó, pero se encontraron algunos detalles menores.",
+        "fecha_limite": "2025-04-22",
+        "grupo": "qa",
+        "estado": "completada",
+        "medio": null
+    },
+    {
+        "id": "89abcdef-0123-4567-89ab-cdef01234567",
+        "titulo": "Tarea cancelada por duplicidad",
+        "descripcion": "Se descubrió que esta tarea ya existía bajo otro nombre.",
+        "fecha_limite": "2025-04-19",
+        "grupo": "mantenimiento",
+        "estado": "cancelada",
+        "medio": null
+    },
+    {
+        "id": "3456789a-bcde-f012-3456-789abcdef012",
+        "titulo": "Tarea pendiente de documentación",
+        "descripcion": "Es necesario escribir la documentación para esta funcionalidad.",
+        "fecha_limite": "2025-04-27",
+        "grupo": "documentación",
+        "estado": "pendiente",
+        "medio": null
+    }
+]

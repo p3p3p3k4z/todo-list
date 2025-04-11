@@ -1,0 +1,22 @@
+Instrucciones:
+Desarrolla una pequeña aplicación en Python que permita:
+
+Crear tareas (con título, descripción y fecha límite).
+
+Listar tareas guardadas.
+
+Marcar tareas como completadas.
+
+Opciones:
+
+Puedes usar Flask o FastAPI si quieres mostrar conocimientos web/API.
+
+Si lo prefieres más simple, usa solo consola con archivos .json o .csv para almacenar.
+
+(Opcional pero valorado):
+
+Separación por módulos o estructura de carpetas ordenada.
+
+Incluir instrucciones de uso en un archivo README.md.
+
+Captura o pequeño video mostrando el uso.
