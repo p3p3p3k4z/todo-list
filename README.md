@@ -37,13 +37,15 @@ Las tareas se organizan en diferentes "baúles" (archivos JSON) almacenados en l
     pip install fastapi uvicorn Flask
     ```
 
-### Interfaz de Consola
+<div style="overflow: auto;">
+  <img src="data/img/CLI.png" alt="Interfaz de Consola" style="float: left; margin-right: 20px;">
+  <div style="float: right; text-align: right;">
+    <h3>Interfaz de Consola</h3>
+    <strong>Ejecuta el script principal:</strong>
+    <pre><code>python3 main_bk.py</code></pre>
+  </div>
+</div>
 
-    **Ejecuta el script principal:**
-
-    ```bash
-    python3 main_bk.py
-    ```
 
 ### API Web (FastAPI)
 
@@ -56,6 +58,10 @@ Las tareas se organizan en diferentes "baúles" (archivos JSON) almacenados en l
     ```
 
     La API estará disponible en `http://127.0.0.1:8000`. Los baúles se gestionan leyendo y escribiendo directamente en los archivos JSON dentro de la carpeta `data/baules/`.
+
+	<p align="center">
+		<img src="data/img/API.png" alt="CLI" style="display: block; margin-left: auto; margin-right: auto;">
+	</p>
 
 ### Interfaz Web (Flask)
 

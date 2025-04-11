@@ -7,5 +7,14 @@
         "grupo": "asignado",
         "estado": "en proceso",
         "medio": null
+    },
+    {
+        "id": "5e748d5f-e307-4d75-880e-7e4158c1e245",
+        "titulo": "Calculo",
+        "descripcion": "Estudiar Integrales Trigonometricas",
+        "fecha_limite": "2025-03-19",
+        "grupo": "Calculo Integral",
+        "estado": "asignada",
+        "medio": ""
     }
 ]
