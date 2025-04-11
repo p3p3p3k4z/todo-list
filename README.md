@@ -64,16 +64,16 @@ Las tareas se organizan en diferentes "baúles" (archivos JSON) almacenados en l
 3.  **Ejecuta la aplicación Flask:**
 
     ```bash
-    python3 app.py
+    flask --app web_ui/app.py run --debug
     ```
 
     La interfaz web estará disponible en `http://127.0.0.1:5000` (por defecto). Esta interfaz permite crear, listar, editar, eliminar y marcar como completadas las tareas, así como crear y eliminar baúles.
     
 	<p align="center">
-	  <img src="data/img/TAREAS.png" alt="TAREAS" style="display: block; margin-left: auto; margin-right: auto;">
+	  <img src="data/img/TAREAS.png" alt="TAREAS" width="300" style="display: block; margin-left: auto; margin-right: auto;">
 	</p>
 	<p align="center">
-	  <img src="data/img/BAUL.png" alt="BAUL" style="display: block; margin-left: auto; margin-right: auto;">
+	  <img src="data/img/BAUL.png" alt="BAUL" width="300" style="display: block; margin-left: auto; margin-right: auto;">
 	</p>
 
 ## Endpoints de la API
