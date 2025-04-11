@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Editar Tarea en {{ vault_name }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/edit_task.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Editar Tarea en {{ vault_name }}</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" value="{{ task.get_titulo() }}" required>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion">{{ task.get_descripcion() }}</textarea>
+            </div>
+            <div class="form-group">
+                <label for="fecha_limite">Fecha Límite:</label>
+                <input type="date" id="fecha_limite" name="fecha_limite" value="{{ task.get_fecha_limite() }}">
+            </div>
+            <div class="form-group">
+                <label for="grupo">Grupo:</label>
+                <input type="text" id="grupo" name="grupo" value="{{ task.get_grupo() }}">
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado">
+                    {% for estado in estados_validos %}
+                    <option value="{{ estado }}" {% if task.get_estado() == estado %}selected{% endif %}>
+                        {{ estado }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="medio">Medio (Imagen):</label>
+                {% if task.get_medio() %}
+                <div class="media-preview">
+                    <img src="{{ task.get_medio() }}" alt="Imagen adjunta" style="max-width: 200px; height: auto;">
+                    <label>
+                        <input type="checkbox" name="keep_medio" value="keep"> Mantener imagen actual
+                    </label>
+                </div>
+                {% endif %}
+                <input type="file" id="medio" name="medio" accept="image/*">
+                <small>Selecciona un nuevo archivo de imagen para reemplazar el actual.</small>
+            </div>
+            <button type="submit">Guardar Cambios</button>
+        </form>
+        <p class="back-link"><a href="{{ url_for('task_list', vault_name=vault_name) }}">Volver a la lista de tareas</a></p>
+    </div>
+</body>
+</html>

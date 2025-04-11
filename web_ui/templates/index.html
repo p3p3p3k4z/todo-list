@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Seleccionar Baúl</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+    <div class="vault-container">
+        <h1>Tus Baúles</h1>
+        <div class="create-vault-link">
+            <a href="{{ url_for('create_vault') }}">Crear Nuevo Baúl</a>
+        </div>
+        <div class="vault-grid">
+            {% for vault in vaults %}
+            <div class="vault-item" id="vault-{{ loop.index }}">
+                <a href="{{ url_for('task_list', vault_name=vault) }}">
+                    <img src="{{ url_for('static', filename='images/vault.png') }}" alt="Baúl" class="vault-icon">
+                    <span class="vault-name">{{ vault }}</span>
+                </a>
+                <button class="delete-button" onclick="window.location.href='{{ url_for('delete_vault', vault_name=vault) }}'">
+                    &times;
+                </button>
+            </div>
+            {% else %}
+            <p>No hay baúles disponibles.</p>
+            {% endfor %}
+        </div>
+        {% if delete_error %}
+            <p class="delete-error">{{ delete_error }}</p>
+        {% endif %}
+    </div>
+
+    <script>
+        function getRandomHue() {
+            return Math.random() * 360;
+        }
+
+        const vaultItems = document.querySelectorAll('.vault-item');
+        vaultItems.forEach(item => {
+            const hue = getRandomHue();
+            const filterValue = `hue-rotate(${hue}deg) saturate(1.2)`;
+            item.style.setProperty('--vault-filter-color', filterValue);
+        });
+    </script>
+</body>
+</html>

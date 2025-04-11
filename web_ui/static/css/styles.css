@@ -1,0 +1,66 @@
+body {
+    font-family: sans-serif;
+    margin: 20px;
+}
+
+.filters {
+    margin-bottom: 20px;
+}
+
+.filters label {
+    margin-right: 10px;
+}
+
+.task-board {
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+}
+
+.task-column {
+    flex: 0 0 auto;
+    width: 300px;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.task-column h2 {
+    margin-top: 0;
+    text-align: center;
+    color: #333;
+}
+
+.task-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.task-card h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.task-card p {
+    margin-bottom: 8px;
+    color: #777;
+}
+
+.actions a {
+    margin-right: 10px;
+    text-decoration: none;
+    color: blue;
+}
+
+.actions form {
+    display: inline;
+}
+
+.actions label {
+    margin-left: 5px;
+}

@@ -1,20 +1,47 @@
 [
     {
-        "id": "5f8873a9-f911-420f-ad32-6e9aaf270944",
-        "titulo": null,
-        "descripcion": null,
-        "fecha_limite": null,
-        "grupo": null,
-        "estado": "en proceso",
-        "medio": null
-    },
-    {
         "id": "18639dfb-1907-44b4-9a65-0ff671228b74",
         "titulo": "Implementar login",
         "descripcion": "Crear la funcionalidad de inicio de sesión de usuarios.",
         "fecha_limite": "2025-04-25",
         "grupo": "desarrollo",
-        "estado": "pendiente",
-        "medio": null
+        "estado": "completada",
+        "medio": "wallhaven-47r7me_1920x1080.png"
+    },
+    {
+        "id": "434ab127-3dba-471a-87a0-a93b9cc0363c",
+        "titulo": "Ala",
+        "descripcion": "chatgpt",
+        "fecha_limite": "2025-04-25",
+        "grupo": "ia",
+        "estado": "asignada",
+        "medio": "wallhaven-47r7me_1920x1080.png"
+    },
+    {
+        "id": "b79f201e-2ef4-4d78-a992-595fb9716b27",
+        "titulo": "Nuevo",
+        "descripcion": "version2",
+        "fecha_limite": "2025-04-11",
+        "grupo": "becario",
+        "estado": "completada",
+        "medio": "wallhaven-47r7me_1920x1080.png"
+    },
+    {
+        "id": "6d746ad3-629a-40f0-8147-76a0365430d0",
+        "titulo": "hola",
+        "descripcion": "nueva prueba",
+        "fecha_limite": "2025-04-18",
+        "grupo": "ia",
+        "estado": "cancelada",
+        "medio": "wallhaven-47r7me_1920x1080.png"
+    },
+    {
+        "id": "692706fe-2e7f-4776-8b75-5b29370c89bf",
+        "titulo": "HOla",
+        "descripcion": "nueva prueba imagen",
+        "fecha_limite": "2025-04-11",
+        "grupo": "ia",
+        "estado": "asignada",
+        "medio": "/static/uploads/jLXKclH-domo-kun-wallpaper.jpg"
     }
 ]

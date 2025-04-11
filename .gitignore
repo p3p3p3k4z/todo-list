@@ -22,3 +22,4 @@ pip-delete-this.txt
 *.swp
 *.swo
 .DS_Store
+web_ui/static/uploads/

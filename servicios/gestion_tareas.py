@@ -38,20 +38,16 @@ class GestionTareas:
         except Exception as e:
             print(f"Ocurrió un error al guardar las tareas en {self.archivo}: {e}")
 
-    # Agregar una tarea
     def agregar_tarea(self, tarea):
         self.tareas.append(tarea)
         self.guardar_tareas()
 
-    # Filtrar tareas por estado
     def filtrar_tareas_por_estado(self, estado):
         return [tarea for tarea in self.tareas if tarea.get_estado().lower() == estado.lower()]
 
-    # Filtrar tareas por grupo
     def filtrar_tareas_por_grupo(self, grupo):
         return [tarea for tarea in self.tareas if tarea.get_grupo() and tarea.get_grupo().lower() == grupo.lower()]
 
-    # Cambiar estado de una tarea
     def cambiar_estado_tarea(self, id_tarea, nuevo_estado):
         tarea = next((t for t in self.tareas if t.get_id() == id_tarea), None)
         if tarea:
@@ -60,11 +56,9 @@ class GestionTareas:
         else:
             raise ValueError("Tarea no encontrada.")
 
-    # Obtener todas las tareas
     def obtener_tareas(self):
         return self.tareas
 
-    # Eliminar una tarea por ID
     def eliminar_tarea_por_id(self, id_tarea):
         tarea_a_eliminar = next((t for t in self.tareas if t.get_id() == id_tarea), None)
         if tarea_a_eliminar:

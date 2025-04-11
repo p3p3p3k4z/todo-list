@@ -1,33 +1,21 @@
 # todo-list
 
-Esta aplicación permite gestionar tareas a través de una interfaz de consola y una API web con FastAPI. Las tareas se organizan en diferentes "baúles" (archivos JSON) almacenados en la carpeta `data/baules/`.
+Esta aplicación permite gestionar tareas a través de una interfaz de consola (CLI), una API web con FastAPI y una interfaz web con Flask. Las tareas se organizan en diferentes "baúles" (archivos JSON) almacenados en la carpeta `data/baules/`.
 
-## Estructura del Proyecto
-
-todo-list/
-├── modelos/
-│   └── tarea.py
-├── servicios/
-│   └── gestion_tareas.py
-├── api/
-│   └── main.py
-├── data/
-│   └── baules/
-├── main_bk.py
-└── README.md
-
-
+## Estructura del proyecto
 * `modelos/tarea.py`: Define la estructura de la clase `Tarea`.
 * `servicios/gestion_tareas.py`: Contiene la lógica para gestionar las tareas (CRUD, filtrar, eliminar baúl, etc.).
 * `api/main.py`: Define la aplicación FastAPI y sus endpoints para la gestión de tareas a través de una API web.
-* `data/baules/`: Almacena los archivos JSON de los diferentes baúles de tareas. Los nombres de los archivos (sin la extensión `.json`) se utilizan como identificadores de los baúles en la API.
-* `main_bk.py`: Proporciona una interfaz de línea de comandos para la gestión de tareas 
+* `web_ui/`: Contiene los archivos de la interfaz web desarrollada con Flask.
+    * `web_ui/app.py`: La aplicación Flask principal.
+    * `web_ui/templates/`: Contiene las plantillas HTML para la interfaz web.
+    * `web_ui/static/`: Contiene archivos estáticos como CSS e imágenes.
+* `data/baules/`: Almacena los archivos JSON de los diferentes baúles de tareas.
+* `main_bk.py`: Proporciona una interfaz de línea de comandos para la gestión de tareas.
 
 ## Cómo ejecutar la aplicación
 
-### Entorno Virtual (Recomendado)
-
-Es altamente recomendable crear un entorno virtual para aislar las dependencias de tu proyecto.
+### Entorno Virtual 
 
 1.  **Navega al directorio raíz del proyecto (`todo-list`) en tu terminal.**
 2.  **Crea un entorno virtual:**
@@ -45,15 +33,15 @@ Es altamente recomendable crear un entorno virtual para aislar las dependencias 
 4.  **Instala las dependencias necesarias:**
 
     ```bash
-    pip install fastapi uvicorn
+    pip install fastapi uvicorn Flask
     ```
 
 ### Interfaz de Consola
 
-5.  **Ejecuta el script principal:**
+    **Ejecuta el script principal:**
 
     ```bash
-    python3 main.py
+    python3 main_bk.py
     ```
 
 ### API Web (FastAPI)
@@ -67,6 +55,18 @@ Es altamente recomendable crear un entorno virtual para aislar las dependencias 
     ```
 
     La API estará disponible en `http://127.0.0.1:8000`. Los baúles se gestionan leyendo y escribiendo directamente en los archivos JSON dentro de la carpeta `data/baules/`.
+
+### Interfaz Web (Flask)
+
+1.  **Asegúrate de tener el entorno virtual activado.**
+2.  **Navega al directorio `web_ui` dentro del directorio raíz del proyecto (`todo-list/web_ui`).**
+3.  **Ejecuta la aplicación Flask:**
+
+    ```bash
+    python3 app.py
+    ```
+
+    La interfaz web estará disponible en `http://127.0.0.1:5000` (por defecto). Esta interfaz permite crear, listar, editar, eliminar y marcar como completadas las tareas, así como crear y eliminar baúles.
 
 ## Endpoints de la API
 
@@ -111,7 +111,8 @@ Es altamente recomendable crear un entorno virtual para aislar las dependencias 
 
 ## Cómo interactuar con la API
 
-Puedes usar herramientas como `curl` para interactuar con la API. Reemplaza `mibául` y `un-id-de-tarea` con los valores correspondientes.
+Uso `curl` para interactuar con la API. Reemplaza `mibául` y `un-id-de-tarea` con los valores correspondientes.
+Adiccionalmente dejo algunos ejemplos
 
 * **Listar tareas del baúl "trabajo":**
     ```bash

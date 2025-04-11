@@ -1,0 +1,126 @@
+Esta es una serie de ejemplos para manejar la API
+
+Base URL: http://127.0.0.1:8000
+
+# Endpoints:
+
+    Crear una nueva tarea:
+
+        Endpoint: POST /baules/{nombre_baul}/tareas/
+
+        Método: POST
+
+        Parámetro en la URL:
+            nombre_baul: Nombre del baúl.
+
+        Cuerpo (JSON): Envía los detalles de la nueva tarea. Los campos titulo, descripcion, fecha_limite, y grupo son generalmente esperados al crear una tarea. estado por defecto es "pendiente", medio e id se generan o pueden ser omitidos.
+        JSON
+
+{
+    "titulo": "Nueva tarea",
+    "descripcion": "Detalles...",
+    "fecha_limite": "2025-04-21",
+    "grupo": "personal",
+    "estado": "pendiente",
+    "medio": null
+}
+
+Ejemplo curl:
+Bash
+
+    curl -X POST -H "Content-Type: application/json" -d '{"titulo": "Comprar flores", "descripcion": "Para la abuela.", "fecha_limite": "2025-04-22", "grupo": "familiar"}' http://127.0.0.1:8000/baules/miscosas/tareas/
+
+    Respuesta: Tarea creada (con id generado) y código 201 Created.
+
+Listar tareas de un baúl:
+
+    Endpoint: GET /baules/{nombre_baul}/tareas/
+    Método: GET
+    Parámetro en la URL:
+        nombre_baul: Nombre del baúl.
+    Ejemplo curl:
+    Bash
+
+    curl http://127.0.0.1:8000/baules/miscosas/tareas/
+
+    Respuesta: Lista de tareas en JSON y código 200 OK.
+
+Obtener una tarea por ID:
+
+    Endpoint: GET /baules/{nombre_baul}/tareas/{id_tarea}
+    Método: GET
+    Parámetros en la URL:
+        nombre_baul: Nombre del baúl.
+        id_tarea: ID de la tarea.
+    Ejemplo curl:
+    Bash
+
+    curl http://127.0.0.1:8000/baules/miscosas/tareas/un-id-especifico
+
+    Respuesta: Tarea en JSON y código 200 OK (o 404 Not Found).
+
+Actualizar una tarea:
+
+    Endpoint: PUT /baules/{nombre_baul}/tareas/{id_tarea}
+
+    Método: PUT
+
+    Parámetros en la URL:
+        nombre_baul: Nombre del baúl.
+        id_tarea: ID de la tarea a actualizar.
+
+    Cuerpo (JSON): Envía solo los campos que deseas actualizar.
+    JSON
+
+{
+    "estado": "en proceso",
+    "descripcion": "Ahora estoy trabajando en esto."
+}
+
+Ejemplo curl:
+Bash
+
+    curl -X PUT -H "Content-Type: application/json" -d '{"estado": "en proceso", "descripcion": "Ahora estoy trabajando en esto."}' http://127.0.0.1:8000/baules/miscosas/tareas/un-id-especifico
+
+    Respuesta: Tarea actualizada en JSON y código 200 OK (o 404 Not Found).
+
+Completar una tarea:
+
+    Endpoint: PUT /baules/{nombre_baul}/tareas/{id_tarea}/completar
+    Método: PUT
+    Parámetros en la URL:
+        nombre_baul: Nombre del baúl.
+        id_tarea: ID de la tarea a completar.
+    Ejemplo curl:
+    Bash
+
+    curl -X PUT http://127.0.0.1:8000/baules/miscosas/tareas/un-id-especifico/completar
+
+    Respuesta: Tarea actualizada con estado "completada" en JSON y código 200 OK (o 404 Not Found).
+
+Eliminar una tarea:
+
+    Endpoint: DELETE /baules/{nombre_baul}/tareas/{id_tarea}
+    Método: DELETE
+    Parámetros en la URL:
+        nombre_baul: Nombre del baúl.
+        id_tarea: ID de la tarea a eliminar.
+    Ejemplo curl:
+    Bash
+
+    curl -X DELETE http://127.0.0.1:8000/baules/miscosas/tareas/un-id-especifico
+
+    Respuesta: Código 204 No Content (si se eliminó) o 404 Not Found.
+
+Eliminar un baúl:
+
+    Endpoint: DELETE /baules/{nombre_baul}
+    Método: DELETE
+    Parámetro en la URL:
+        nombre_baul: Nombre del baúl a eliminar (nombre del archivo JSON sin extensión).
+    Ejemplo curl:
+    Bash
+
+curl -X DELETE http://127.0.0.1:8000/baules/miscosas
+
+Respuesta: Código 204 No Content (si se eliminó) o 404 Not Found.

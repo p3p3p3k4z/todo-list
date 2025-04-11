@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Crear Nueva Tarea en {{ vault_name }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/create_task.css') }}">
+</head>
+<body>
+    <div class="form-container">
+        <h1>Crear Nueva Tarea en {{ vault_name }}</h1>
+        <form method="POST" enctype="multipart/form-data">
+            <div class="form-group">
+                <label for="titulo">Título:</label>
+                <input type="text" id="titulo" name="titulo" required>
+            </div>
+            <div class="form-group">
+                <label for="descripcion">Descripción:</label>
+                <textarea id="descripcion" name="descripcion"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="fecha_limite">Fecha Límite:</label>
+                <input type="date" id="fecha_limite" name="fecha_limite">
+            </div>
+            <div class="form-group">
+                <label for="grupo">Grupo:</label>
+                <input type="text" id="grupo" name="grupo">
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado:</label>
+                <select id="estado" name="estado">
+                    {% for estado in estados_validos %}
+                    <option value="{{ estado }}">
+                        {{ estado }}
+                    </option>
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="medio">Medio (Imagen):</label>
+                <input type="file" id="medio" name="medio" accept="image/*">
+                <small>Selecciona un archivo de imagen.</small>
+            </div>
+            <button type="submit">Guardar Tarea</button>
+        </form>
+        <p class="back-link"><a href="{{ url_for('task_list', vault_name=vault_name) }}">Volver a la lista de tareas</a></p>
+    </div>
+</body>
+</html>

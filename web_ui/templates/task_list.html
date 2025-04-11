@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tareas en {{ vault_name }}</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/task_list.css') }}">
+</head>
+<body>
+    <div class="top-actions">
+        <h1>Tareas en {{ vault_name }}</h1>
+        <a href="{{ url_for('create_task', vault_name=vault_name) }}" class="button">Crear Nueva Tarea</a>
+    </div>
+
+    <div class="filters">
+        <label for="estado">Filtrar por Estado:</label>
+        <select name="estado" id="estado" onchange="window.location.href = '{{ url_for('task_list', vault_name=vault_name) }}?estado=' + this.value">
+            <option value="">Todos los estados</option>
+            {% for estado in estados_unicos %}
+            <option value="{{ estado }}" {% if estado == estado_seleccionado %}selected{% endif %}>{{ estado }}</option>
+            {% endfor %}
+        </select>
+
+        <label for="grupo">Filtrar por Grupo:</label>
+        <select name="grupo" id="grupo" onchange="window.location.href = '{{ url_for('task_list', vault_name=vault_name) }}?grupo=' + this.value">
+            <option value="">Todos los grupos</option>
+            {% for grupo in grupos_unicos %}
+            <option value="{{ grupo }}" {% if grupo == grupo_seleccionado %}selected{% endif %}>{{ grupo }}</option>
+            {% endfor %}
+        </select>
+        <a href="{{ url_for('task_list', vault_name=vault_name) }}" class="button">Mostrar Todo</a>
+    </div>
+
+    <div class="task-board">
+        {% for estado in estados_unicos %}
+        <div class="task-column" data-estado="{{ estado }}">
+            <h2>{{ estado.upper() }}</h2>
+            {% for task in tasks if task.get_estado() == estado %}
+            <div class="task-card">
+                <h3>{{ task.get_titulo() }}</h3>
+                <p>{{ task.get_descripcion() }}</p>
+                <p>Grupo: {{ task.get_grupo() }}</p>
+                <p>Fecha Límite: {{ task.get_fecha_limite() }}</p>
+                {% if task.get_medio() %}
+                <div class="media-preview">
+                    {% if task.get_medio().lower().endswith(('.png', '.jpg', '.jpeg', '.gif')) %}
+                    <img src="{{ task.get_medio() }}" alt="Media" style="max-width: 100%; height: auto;">
+                    {% else %}
+                    <p>Medio: {{ task.get_medio() }} (No se puede previsualizar)</p>
+                    {% endif %}
+                </div>
+                {% endif %}
+                <div class="actions">
+                    <a href="{{ url_for('edit_task', vault_name=vault_name, task_id=task.get_id()) }}">Editar</a>
+                    <a href="{{ url_for('delete_task', vault_name=vault_name, task_id=task.get_id()) }}">Eliminar</a>
+                    <form action="{{ url_for('complete_task', vault_name=vault_name, task_id=task.get_id()) }}" method="POST">
+                        <input type="checkbox" name="completada" value="completada" {% if task.get_estado() == 'completada' %}checked{% endif %} onchange="this.form.submit()">
+                        <label for="completada">Completada</label>
+                    </form>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        {% endfor %}
+    </div>
+
+    <p class="back-link"><a href="{{ url_for('index') }}">Volver a la lista de baúles</a></p>
+</body>
+</html>

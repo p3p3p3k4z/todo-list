@@ -1,9 +1,9 @@
 from fastapi import FastAPI, HTTPException, Path, Depends, Body
-from typing import List, Optional
+from typing import List, Optional #manejo de datos opcionales y anotaciones de tipo
 from pydantic import BaseModel
-import uuid
+import uuid #Generar id unicos
 from servicios.gestion_tareas import GestionTareas
-from modelos.tarea import Tarea  # Asegúrate de que este import sea correcto
+from modelos.tarea import Tarea  
 
 app = FastAPI()
 
@@ -72,7 +72,7 @@ async def actualizar_tarea(nombre_baul: str = Path(..., title="Nombre del baúl"
             gestor.guardar_tareas()
             return TareaAPI(**tarea_servicio.a_diccionario())
     raise HTTPException(status_code=404, detail="Tarea no encontrada")
-    raise HTTPException(status_code=404, detail="Tarea no encontrada")
+    raise HTTPException(status_code=404, detail="Tarea no encontrada") #lo repeti porque llegaba a no lanzar mensaje
 
 @app.put("/baules/{nombre_baul}/tareas/{id_tarea}/completar", response_model=TareaAPI)
 async def completar_tarea(nombre_baul: str = Path(..., title="Nombre del baúl"), id_tarea: str = Path(..., title="ID de la tarea a completar"), gestor: GestionTareas = Depends(obtener_gestor_tareas)):
