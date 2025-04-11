@@ -60,7 +60,7 @@ Las tareas se organizan en diferentes "baúles" (archivos JSON) almacenados en l
 ### Interfaz Web (Flask)
 
 1.  **Asegúrate de tener el entorno virtual activado.**
-2.  **Navega al directorio `web_ui` dentro del directorio raíz del proyecto (`todo-list/web_ui`).**
+2.   **Navega al directorio raíz del proyecto (`todo-list`).**
 3.  **Ejecuta la aplicación Flask:**
 
     ```bash
