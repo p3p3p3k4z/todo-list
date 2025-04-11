@@ -39,11 +39,7 @@ Las tareas se organizan en diferentes "baúles" (archivos JSON) almacenados en l
 
 ### Interfaz de Consola
 
-    **Ejecuta el script principal:**
-
-    ```bash
     python3 main_bk.py
-    ```
 
 
 ### API Web (FastAPI)
