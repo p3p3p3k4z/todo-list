@@ -2,7 +2,7 @@ import os
 from rich.console import Console
 from rich.panel import Panel
 from pynput import keyboard
-from data.ascci import baul_ascci
+from data.ascci import baul_ascci, ascci_banner
 from rich.table import Table
 from rich.style import Style
 from modelos.tarea import Tarea
@@ -21,6 +21,7 @@ def seleccionar_baul(baules_disponibles):
 
     def mostrar_seleccion(current_selection):
         console.clear()
+        console.print(ascci_banner, style="green")
         console.print(baul_ascci, style="bold blue")
         console.print(Panel(f"[bold green]Baúl seleccionado:[/bold green] [bold reverse white]{baules_disponibles[current_selection]}[/bold reverse white]\n"
                               "[italic yellow]Usa las flechas izquierda/derecha para navegar y Enter para seleccionar. Presiona 'q' para salir.[/italic yellow]"))
@@ -76,7 +77,7 @@ def formato_tareas(tareas, nombre_baul_archivo):
 
     console.print(Panel(f"[bold cyan]Tareas en {nombre_baul_archivo}[/bold cyan]"))
     tareas_mostradas = 0
-    tareas_por_pagina = 5  # Puedes ajustar este número
+    tareas_por_pagina = 5  
 
     for i in range(0, len(tareas), tareas_por_pagina):
         pagina = tareas[i : i + tareas_por_pagina]

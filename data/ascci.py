@@ -21,4 +21,14 @@ baul_ascci = """
               ';cooo,...':;;;,..              
                   ';'...',..                  
 """
-print(baul_ascci)
+ascci_banner="""
+▞▀▖      ▐           ▌    ▀▛▘              
+▌▄▖▞▀▖▞▀▘▜▀ ▞▀▖▙▀▖ ▞▀▌▞▀▖  ▌▝▀▖▙▀▖▞▀▖▝▀▖▞▀▘
+▌ ▌▛▀ ▝▀▖▐ ▖▌ ▌▌   ▌ ▌▛▀   ▌▞▀▌▌  ▛▀ ▞▀▌▝▀▖
+▝▀ ▝▀▘▀▀  ▀ ▝▀ ▘   ▝▀▘▝▀▘  ▘▝▀▘▘  ▝▀▘▝▀▘▀▀"""
+
+def imprimir_banner():
+    print(ascci_banner)
+
+def imprimir_baul():
+    print(baul_ascci)

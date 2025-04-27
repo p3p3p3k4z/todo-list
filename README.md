@@ -34,7 +34,13 @@ Las tareas se organizan en diferentes "baúles" (archivos JSON) almacenados en l
 4.  **Instala las dependencias necesarias:**
 
     ```bash
-    pip install fastapi uvicorn Flask
+    pip install fastapi uvicorn Flask 
+    ```
+
+    Para terminal
+
+    ```bash
+    pip install rich pyfiglet rich pynput
     ```
 
 ### Interfaz de Consola
