@@ -72,21 +72,21 @@
         "medio": null
     },
     {
-        "id": "89abcdef-0123-4567-89ab-cdef01234567",
-        "titulo": "Tarea cancelada por duplicidad",
-        "descripcion": "Se descubrió que esta tarea ya existía bajo otro nombre.",
-        "fecha_limite": "2025-04-19",
-        "grupo": "mantenimiento",
-        "estado": "cancelada",
-        "medio": null
-    },
-    {
         "id": "3456789a-bcde-f012-3456-789abcdef012",
         "titulo": "Tarea pendiente de documentación",
         "descripcion": "Es necesario escribir la documentación para esta funcionalidad.",
         "fecha_limite": "2025-04-27",
         "grupo": "documentación",
-        "estado": "pendiente",
+        "estado": "en proceso",
         "medio": null
+    },
+    {
+        "id": "e8cbd9a0-6f49-439e-a0a9-dd2944fd8617",
+        "titulo": "Revision de Reto",
+        "descripcion": "Revision del programa de gestion de tareas",
+        "fecha_limite": "2025-05-02",
+        "grupo": "code-review",
+        "estado": "en proceso",
+        "medio": ""
     }
 ]

@@ -1,0 +1,20 @@
+[
+    {
+        "id": "889b5dac-415e-47f2-834e-13c30c076f41",
+        "titulo": "pruebaTerminal",
+        "descripcion": "Tratando de agregar decoradores y colores",
+        "fecha_limite": "2025-05-02",
+        "grupo": "proyecto",
+        "estado": "asignada",
+        "medio": ""
+    },
+    {
+        "id": "a83309c2-711e-449a-b1bb-281289d1f4c6",
+        "titulo": "Prueba2",
+        "descripcion": "Integracion de rich",
+        "fecha_limite": "2025-05-02",
+        "grupo": "",
+        "estado": "completada",
+        "medio": "/home/m4r10/Documentos/todo-list/web_ui/static/images/vault.png"
+    }
+]
