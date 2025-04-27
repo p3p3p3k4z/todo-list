@@ -5,6 +5,15 @@ from modelos.tarea import Tarea
 BAULES_FOLDER = 'data/baules'
 
 class GestionTareas:
+
+    """
+    Gestiona la colección de tareas, permitiendo realizar diversos metodos
+
+    Attributes:
+        archivo (str): La ruta al archivo JSON donde se almacenan las tareas.
+        tareas (list): Una lista de objetos Tarea que representa todas las tareas gestionadas.
+    """
+
     def __init__(self, nombre_archivo="tareas.json"):
         os.makedirs(BAULES_FOLDER, exist_ok=True)  # Crear la carpeta si no existe
         self.archivo = os.path.join(BAULES_FOLDER, self._asegurar_extension(nombre_archivo))

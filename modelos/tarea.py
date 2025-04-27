@@ -5,7 +5,7 @@ class Tarea:
     ESTADOS_VALIDOS = ["pendiente", "asignada", "en proceso", "completada", "cancelada"]
 
     def __init__(self, titulo, descripcion, fecha_limite, grupo, estado="pendiente", medio=None, id_tarea=None):
-        self._id = id_tarea or str(uuid.uuid4())
+        self._id = id_tarea or str(uuid.uuid4())#Un identificador único para la tarea, generado con UUID
         self._titulo = titulo
         self._descripcion = descripcion
         self._fecha_limite = fecha_limite
@@ -65,6 +65,14 @@ class Tarea:
                 f"Medio: {self.get_medio() if self.get_medio() else 'Ninguno'}")
 
     def a_diccionario(self):
+
+        """
+        Convierte la tarea a un diccionario para su serialización (por ejemplo, a JSON).
+
+        Returns:
+            dict: Un diccionario que representa los atributos de la tarea.
+        """
+
         return {
             "id": self.get_id(),
             "titulo": self.get_titulo(),
@@ -77,6 +85,19 @@ class Tarea:
 
     @staticmethod
     def desde_diccionario(datos):
+
+        """
+        Crea una instancia de la clase Tarea a partir de un diccionario.
+
+        Args:
+            datos (dict): Un diccionario que contiene los datos de la tarea.
+                           Debe contener las claves: "titulo", "descripcion", "fecha_limite", "grupo" y "id".
+                           Opcionalmente puede contener las claves "estado" y "medio".
+
+        Returns:
+            Tarea: Una nueva instancia de la clase Tarea creada con los datos del diccionario.
+        """
+
         tarea = Tarea(
             titulo=datos["titulo"],
             descripcion=datos["descripcion"],
