@@ -64,6 +64,7 @@ def mostrar_menu_inferior(nombre_baul):
         "CE": "Cambiar estado",
         "MC": "Marcar completada",
         "E": "Eliminar tarea",
+        "ED": "Editar tarea",
         "CB": "Cambiar baúl",
         "Q": "Salir",
     }
@@ -145,3 +146,31 @@ def obtener_estado_filtro():
 
 def limpiar_consola():
     console.clear()
+
+def editar_tarea_ui(gestion_tareas):
+    id_tarea = obtener_input("Ingrese el ID de la tarea que desea editar: ")
+    try:
+        nuevos_datos = {}
+        nuevo_titulo = obtener_input("Nuevo título (dejar en blanco para no cambiar): ")
+        if nuevo_titulo:
+            nuevos_datos["titulo"] = nuevo_titulo
+        nueva_descripcion = obtener_input("Nueva descripción (dejar en blanco para no cambiar): ")
+        if nueva_descripcion:
+            nuevos_datos["descripcion"] = nueva_descripcion
+        nueva_fecha_limite = obtener_input("Nueva fecha límite (YYYY-MM-DD, dejar en blanco para no cambiar): ")
+        if nueva_fecha_limite:
+            nuevos_datos["fecha_limite"] = nueva_fecha_limite
+        nuevo_grupo = obtener_input("Nuevo grupo (dejar en blanco para no cambiar): ")
+        if nuevo_grupo:
+            nuevos_datos["grupo"] = nuevo_grupo
+        nuevo_estado = obtener_input("Nuevo estado (pendiente, asignada, en proceso, completada, cancelada, dejar en blanco para no cambiar): ")
+        if nuevo_estado:
+            nuevos_datos["estado"] = nuevo_estado
+        nuevo_medio = obtener_input("Nuevo medio (dejar en blanco para no cambiar): ")
+        if nuevo_medio:
+            nuevos_datos["medio"] = nuevo_medio
+
+        gestion_tareas.editar_tarea(id_tarea, nuevos_datos)
+        mostrar_mensaje("Tarea editada exitosamente.", tipo="exito")
+    except ValueError as e:
+        mostrar_mensaje(str(e), tipo="error")

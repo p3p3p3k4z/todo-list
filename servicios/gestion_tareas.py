@@ -51,6 +51,34 @@ class GestionTareas:
         self.tareas.append(tarea)
         self.guardar_tareas()
 
+    def editar_tarea(self, id_tarea, nuevos_datos):
+        """
+        Edita una tarea existente por su ID.
+
+        Args:
+            id_tarea (str): El ID de la tarea a editar.
+            nuevos_datos (dict): Un diccionario con los nuevos datos de la tarea.
+                Las claves del diccionario deben ser los nombres de los atributos de la tarea
+                (por ejemplo, "titulo", "descripcion", "fecha_limite", "grupo", "estado", "medio").
+        """
+        tarea = next((t for t in self.tareas if t.get_id() == id_tarea), None)
+        if tarea:
+            if "titulo" in nuevos_datos:
+                tarea.set_titulo(nuevos_datos["titulo"])
+            if "descripcion" in nuevos_datos:
+                tarea.set_descripcion(nuevos_datos["descripcion"])
+            if "fecha_limite" in nuevos_datos:
+                tarea.set_fecha_limite(nuevos_datos["fecha_limite"])
+            if "grupo" in nuevos_datos:
+                tarea.set_grupo(nuevos_datos["grupo"])
+            if "estado" in nuevos_datos:
+                tarea.set_estado(nuevos_datos["estado"])
+            if "medio" in nuevos_datos:
+                tarea.set_medio(nuevos_datos["medio"])
+            self.guardar_tareas()
+        else:
+            raise ValueError("Tarea no encontrada.")
+
     def filtrar_tareas_por_estado(self, estado):
         return [tarea for tarea in self.tareas if tarea.get_estado().lower() == estado.lower()]
 

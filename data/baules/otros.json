@@ -82,11 +82,11 @@
     },
     {
         "id": "e8cbd9a0-6f49-439e-a0a9-dd2944fd8617",
-        "titulo": "Revision de Reto",
-        "descripcion": "Revision del programa de gestion de tareas",
-        "fecha_limite": "2025-05-02",
-        "grupo": "code-review",
-        "estado": "en proceso",
+        "titulo": "Revision de la funcion editar tareas",
+        "descripcion": "editar",
+        "fecha_limite": "2025-05-10",
+        "grupo": "code-review new",
+        "estado": "pendiente",
         "medio": ""
     }
 ]

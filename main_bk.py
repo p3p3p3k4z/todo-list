@@ -11,6 +11,7 @@ from servicios.terminal_ui import (
     obtener_nuevo_estado,
     obtener_grupo_filtro,
     obtener_estado_filtro,
+    editar_tarea_ui,
     limpiar_consola,
 )
 from modelos.tarea import Tarea
@@ -80,6 +81,8 @@ def main():
                 mostrar_mensaje(f"Tarea con ID {id_tarea} eliminada.", tipo="exito")
             else:
                 mostrar_mensaje("Tarea no encontrada.", tipo="error")
+        elif opcion == "ED": 
+            editar_tarea_ui(gestor)
         elif opcion == "CB":
             nuevo_nombre_baul = seleccionar_baul(obtener_baules_disponibles())
             if nuevo_nombre_baul:
